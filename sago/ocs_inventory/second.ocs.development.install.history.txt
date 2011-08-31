@@ -1,0 +1,146 @@
+    1  dhclient
+    2  ping google.com
+    3  lynx www.timelordz.com/scripts
+    4  yum install lynx
+    5  lynx www.timelordz.com/scripts
+    6  ls
+    7  mv ocs* /root/
+    8  cd /root/
+    9  ls
+   10  bash ocsinventory-agent.bin -s ocs.sagonet.com -t Binary
+   11  chmod +x ocsinventory-agent.bin 
+   12  bash ocsinventory-agent.bin -s ocs.sagonet.com -t Binary
+   13  ls -lha
+   14  pel
+   15  perl 
+   16  perl --version
+   17  ls
+   18  ls -la
+   19  ldd ocsinventory-agent.bin 
+   20  ls
+   21  lynx www.timelordz.com/scripts/sago
+   22  lynx www.timelordz.com/scripts/sago
+   23  ls
+   24  tar zxvf OCSNG_UNIX_SERVER-1.02.1.tar.gz 
+   25  rpm -Uvh http://download.fedora.redhat.com/pub/epel/4/i386/epel-release-4.9-noarch.rpm
+   26  rpm -Uvh http://download.fedora.redhat.com/pub/epel/4/i386/epel-release-4-9-noarch.rpm
+   27  rpm -Uvh http://download.fedora.redhat.com/pub/epel/4/i386/epel-release-4-9.noarch.rpm
+   28  yum install perl-PAR-Dist
+   29  yum install perl-Module-ScanDeps
+   30  pwd
+   31  ls
+   32  cd OCSNG_UNIX_SERVER-1.02.1
+   33  ls
+   34  vim README 
+   35  ls
+   36  cd ..
+   37  ls
+   38  rm OCSNG_UNIX_SERVER-1.02.1*
+   39  rm -rf OCSNG_UNIX_SERVER-1.02.1*
+   40  ls
+   41  lynx www.timelordz.com/scripts/sago
+   42  ls
+   43  tar zxvf OCSNG_UNIX_AGENT-1.02.tar.gz 
+   44  cd Ocsinventory-Agent-1.0.1/
+   45  tools/standalone.sh 
+   46  cpan
+   47  yum install perl-XML-SAX
+   48  pwd
+   49  ls
+   50  cd ..
+   51  ls
+   52  cd Ocsinventory-Agent-1.0.1/
+   53  ks
+   54  ls
+   55  tools/standalone.sh 
+   56  lynx www.timelordz.com/scripts/sago
+   57  lynx ks.sagonet.com/tools/ocs
+   58  ls
+   59  mv ocsinventory-agent ../
+   60  cd ..
+   61  ls
+   62  pwd
+   63  ls
+   64  cd ocsinventory-agent
+   65  ls
+   66  updatedb &
+   67  locte ocs*.rpm
+   68  locate ocs*.rpm
+   69  ls
+   70  cd ocsinventory-agent
+   71  ls
+   72  cd Ocsinventory-Agent-1.0.1/
+   73  ls
+   74  mv ocsinventory-agent-1.0.1-2.el4.remi.noarch.rpm ../
+   75  ls
+   76  cd ..
+   77  ls
+   78  ls --color=auto
+   79  mv ocsinventory-agent.bin ocsinventory-agent-old.bin
+   80  rpm -Uvh ocsinventory-agent-1.0.1-2.el4.remi.noarch.rpm 
+   81  yum localinstall ocsinventory-agent-1.0.1-2.el4.remi.noarch.rpm 
+   82  ls
+   83  cd Ocsinventory-Agent-1.0.1/
+   84  ls
+   85  tools/standalone.sh 
+   86  ls
+   87  pwd
+   88  cd ..
+   89  ls
+   90  mv ocsinventory-agent Ocsinventory-Agent-1.0.1/
+   91  cd Ocsinventory-Agent-1.0.1/
+   92  ls
+   93  tools/standalone.sh 
+   94  ls
+   95  file ocsinventory-agent.bin 
+   96  du -sh ocsinventory-agent.bin 
+   97  tail /var/log/ocsinventory-agent/
+   98  ls
+   99  ./ocsinventory-agent.bin 
+  100  tail /var/log/ocsinventory-agent/
+  101  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  102  vim /etc/sysconfig/ocsinventory-agent 
+  103  ./ocsinventory-agent.bin -s ocs.sagonet.com -t BinaryAgent
+  104  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  105  vim /etc/sysconfig/ocsinventory-agent 
+  106  ./ocsinventory-agent.bin -s ocs.sagonet.com -t BinaryAgent
+  107  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  108  ocsinventory-agent -?
+  109  ./ocsinventory-agent.bin -s http://ocs.sagonet.com -t BinaryAgent
+  110  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  111  date
+  112  vim /etc/sysconfig/ocsinventory-agent 
+  113  ls
+  114  ./ocsinventory-agent.bin -?
+  115  ping google.com
+  116  ./ocsinventory-agent.bin --server=http://ocs.sagonet.com --tag=BinaryAgent
+  117  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  118  ls /var/lib/ocsinventory-agent/
+  119  cat /var/lib/ocsinventory-agent/10-20-30-42-2009-06-17-09-48-15.ocs 
+  120  ls
+  121  vim /etc/sysconfig/ocsinventory-agent 
+  122  ping ocs.sagonet.com
+  123  ping ocs.sagonet.com
+  124  ping ocs.sagonet.com
+  125  ./ocsinventory-agent.bin --server=http://ocs.sagonet.com --tag=BinaryAgent
+  126  tail /var/log/ocsinventory-agent/ocsinventory-agent.log 
+  127  ls
+  128  ocsinventory-agent -?
+  129* ocsinventory-agent 
+  130* ./ocsinventory-agent.bin --debug --server=http://ocs.sagonet.com --tag=BinaryAgent~
+  131  ping 192.168.42.72
+  132  ls
+  133  scp ocsinventory-agent.bin root@192.168.42.72:/root
+  134  ifconfig 
+  135  scp /etc/sysconfig/ocsinventory-agent root@192.168.42.72:/root
+  136  ls
+  137  mv ocsinventory-agent.bin ocsinventory-agent-working.bin 
+  138  ls
+  139  cat /etc/sysconfig/ocsinventory-agent 
+  140  ls
+  141  vim tools/standalone.sh 
+  142  tools/standalone.sh 
+  143  history
+  144  pwd
+  145  cd /root/
+  146  history > second.ocs.development.install.history.txt

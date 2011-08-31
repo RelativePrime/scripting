@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+		
+<img  style="margin-left: 7.0cm" src="sago_logo.gif" /><p />
+
+<h1 style="margin-left: 1.6cm">MS SQL Database Connector</h1>
+
+<p style="margin-left: 1.1cm"> Please enter server information below: </p>
+
+<form action="./mssqlconnect.php" method="post">
+
+
+<table border="2" style="margin-left: 1.4cm" cellpadding="8">  
+
+<tr><td><span style="color:red;">* </span>Hostname or IP: </td><td><input type="text" name="server" 
+value="<?php if (isset($_POST['server'])) { print htmlspecialchars($_POST['server']); } ?>" /></td></tr>
+
+<tr><td>Port (Default 1433): </td><td><input type="text" name="port" 
+value="<?php if (isset($_POST['server'])) { print htmlspecialchars($_POST['server']); } ?>" /></td></tr> 
+
+<tr><td><span style="color:red;">* </span>MS SQL User: </td><td><input type="text" name="user" 
+value="<?php if (isset($_POST['server'])) { print htmlspecialchars($_POST['server']); } ?>" /></td></tr>
+
+
+<tr><td><span style="color:red;">* </span>Password: </td><td><input type="password" name="password" 
+value="<?php if (isset($_POST['server'])) { print htmlspecialchars($_POST['server']); } ?>" /></td></tr>
+
+
+<tr><td>Database: </td><td><input type="text" name="database" 
+value="<?php if (isset($_POST['server'])) { print htmlspecialchars($_POST['server']); } ?>" /></td></tr>
+
+
+<tr><td colspan="2" align="center"><input type="submit" value="connect" /></td></tr>
+<tr class="noborder"><td colspan="2" align="center"><span style="color:red;">* </span> Required fields.</td></tr>
+</table>
+<input type="hidden" name="submitted" value="true" />
+
+</form>
+
+
+<p style="margin-left: 1.1cm">If administrative credentials are given, but no database specified,<br />
+then a dump of all databases on the server will be shown. </p>
+
+<p style="margin-left: 1.1cm">If a database name is given, a list of tables in that database will be show.</p>
+
+
+
+</body>
+</html>
