@@ -1,0 +1,6 @@
+ncols 360
+nrows 180
+xllcorner -180
+yllcorner -90
+cellsize 1
+NODATA_value -99
