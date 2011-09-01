@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Script: getYearByStationId.sh
-# Purpose: Get yearly data summary for a list of provided stations
+# Purpose: Get yearly data summary for a list of provided stations from the National Water Climate Center
 # Input: station_list.txt year
 # Output: Creates a $YEAR.snotelsummaries directory. Subdirs contain tab seperated data for each state and station.
 # Pete Eby, 2011, Oak Ridge Nation Laboratory, All Data is Provisional
