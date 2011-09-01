@@ -1,0 +1,7 @@
+alaska 	49T03S 
+alaska 	51K05S
+california 	20H13S 
+california 	19L05S 
+colorado 	05M07S 
+colorado 	06J08S 
+
