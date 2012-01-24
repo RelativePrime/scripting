@@ -2,5 +2,7 @@ This repo holds a variety of scripts I've written, for little things at work, an
 
 Really, its just a handy place for me to put stuff. Feel free to use anything you find useful.
 
+Updated 24 Jan 2012
+
 Cheers,
 Relative Prime
