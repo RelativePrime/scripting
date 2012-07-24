@@ -12,6 +12,11 @@
 #  For manual install, see the official site:
 #  http://www.crummy.com/software/BeautifulSoup/
 #
+# For ipv6 support optionally install IPy
+# pip-python install IPy
+# (Uncomment below to import)
+# http://pypi.python.org/pypi/IPy/
+#
 # Curl works to:
 #  curl -s http://www.networksolutions.com/whois/results.jsp?ip=4.2.2.2
 #  curl -s http://www.networksolutions.com/whois-search/domain
@@ -35,7 +40,7 @@ import socket
 import re
 import os
 # Optionally, pip install IPy for ipv6 support
-import IPy
+#import IPy
 
 if len(sys.argv)<2:
 	print "\033[91mUseage: " + sys.argv[0] + " domain.com or ipv4 addr\033[0m"
@@ -46,12 +51,14 @@ domain = sys.argv[1]
 
 # If a valid IP is passed, use it - else use string as FQDN
 
-# If a valid ipv4 addr was given:
+# Check for valid ipv4 / ipv6 addr:
 try:
-	#For ipv4/ipv6 dual stack identifiation of IPs, use IPy
-	IPy.IP(domain)
-	#If you only want ipv4 you can use the socket module
-	#socket.inet_aton(domain)
+	#For ipv4/ipv6 dual stack identifiation
+	if 'IPy' in sys.modules:
+		IPy.IP(domain)
+	# socket for ipv4 only
+	else:
+		socket.inet_aton(domain)
 	print "\033[92mQuerying by IP address " + domain +"\033[0m"
 	url="http://www.networksolutions.com/whois/results.jsp?ip=" + domain
 	page=urllib2.urlopen(url)
@@ -62,10 +69,13 @@ try:
 	print "\n \033[92m The reverse PTR is: \033[0m"
 	cmd = "dig +short -x " + domain
 	os.system(cmd)
-
+	# Alternate way using IPy:
+	# domain.reverseNames()
 
 # Otherwise just use the string
-except socket.error:
+except:
+#socket module has an .error method, but IPy does not, so just catch all. 
+#except socket.error:
 	print "\033[92mQuering by domain name " + domain +"\033[0m"
 	url="http://www.whos.com/whois/" + domain
 
