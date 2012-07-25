@@ -30,7 +30,7 @@
 #  http://www.networksolutions.com/whois/results.jsp?ip=
 #
 # Pete Eby
-# 17 July 2012 
+# 25 July 2012 
 # Oak Ridge National Lab
 
 from BeautifulSoup import BeautifulSoup
@@ -40,7 +40,7 @@ import socket
 import re
 import os
 # Optionally, pip install IPy for ipv6 support
-#import IPy
+import IPy
 
 if len(sys.argv)<2:
 	print "\033[91mUseage: " + sys.argv[0] + " domain.com or ipv4 addr\033[0m"
