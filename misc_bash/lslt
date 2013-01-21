@@ -1,0 +1,19 @@
+#!/bin/bash
+# List the last N items in specified directory in
+# reverse time order (newest on bottom).
+# 
+# You can achieve the same by passing args to a bash funtion, e.g.:
+# lslt () { command ls -lhatr "$1" | tail -"$2"; }
+# Which placed in .bashrc works fine.
+# However, the 'alias' commnad alone will not correctly handle args.
+
+if [ $# -lt 1 ]
+then
+	echo "Usage: $0 /foo N (optional)"
+	echo "Will perform ls -lhatr | tail -N"
+	exit 1  
+fi
+
+dir=$1
+echo "Listing $dir . . . "
+ls -lhatr $dir | tail -$2
