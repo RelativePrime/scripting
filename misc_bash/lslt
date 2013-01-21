@@ -3,7 +3,7 @@
 # reverse time order (newest on bottom).
 # 
 # You can achieve the same by passing args to a bash funtion, e.g.:
-# lslt () { command ls -lhatr "$1" | tail -"$2"; }
+# lslt () { command ls -lhatr --color=always "$1" | tail -"$2"; }
 # Which placed in .bashrc works fine.
 # However, the 'alias' commnad alone will not correctly handle args.
 
@@ -16,4 +16,4 @@ fi
 
 dir=$1
 echo "Listing $dir . . . "
-ls -lhatr $dir | tail -$2
+ls -lhatr --color=always $dir | tail -$2
