@@ -16,7 +16,7 @@
 instance=`pidof xflux`
 if [ -z $instance ]
 then
-/usr/local/bin/xflux -z 37931
+/usr/local/bin/xflux -z yourZipCode 
 else
 echo "xflux is already running with pid $instance."
 echo "You may kill it with: kill $instance or pkill xflux"
