@@ -1,0 +1,29 @@
+#!/bin/bash
+# Grep for multiple instances of Tomcat and display environmental info from /proc for each
+# tr '\0' '\n' < /proc/<pid>/environ or ps eww -p <pid> are handy to parse
+
+echo "Found running instances of Tomcat configured as:" 
+#for i in $(ps aux | grep '/home/*/tomcat' | awk '{print $2}')
+for i in $(ps -eo pid,command |  grep -E '/home/[t]omcat_gbgc|/home/[t]omcat' | awk '{print $1}')
+do
+instance=$(tr /'\0/' /'\n/' < /proc/$i/environ | grep -E '[C]ATALINA_BASE|[C]ATALINA_HOME' | cut -d "=" -f 2)
+java_opts=$(tr /'\0/' /'\n/' < /proc/$i/environ | grep JAVA_OPTS)
+tomcat_user=$(tr /'\0/' /'\n/' < /proc/$i/environ | grep USER)
+tomcat_ulimit=$(grep "open files" /proc/$i/limits | awk '{print $5}')
+echo
+echo
+echo -en "\033[32mProcess:\033[0m $i       \033[32mOpen Files:\033[0m `lsof -p $i | wc -l`       \033[32mFile Descriptors in proc:\033[0m `ls /proc/$i/fd | wc -l`"
+echo -en "\n\033[32mCatalina Base: \033[0m $instance"
+echo -en "\n\033[32mJava Options: \033[0m $java_opts"
+echo -en "\n\033[32mTomcat User: \033[0m $tomcat_user"
+echo -en "\n\033[32mUlimit -n: \033[0m " $tomcat_ulimit;
+done
+echo
+echo
+echo "The current file descriptor limit Tomcat is running with is often set in"
+echo "catalina.sh and displayed when Tomcat is started, or in /proc/pid/limits"
+echo "The hard limit is set in /etc/security/limits.conf"
+echo "Exception: Debian needs to set the limit as root, then spawn a shell"
+echo "inheriting the ulimit, then su - tomcat and run."
+# ref: http://www.tummy.com/blogs/2011/03/15/nofile-limits-not-taking-effect-on-debian-5/
+ 
