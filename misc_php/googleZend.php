@@ -5,12 +5,15 @@
 // where key == header / column name.
 // Using the Zend classes allows for authentication, vs.
 // just using curl to post the data.
-
+//
 // Adapted From: 
 // http://stackoverflow.com/questions/9157845/zend-gdata-spreadsheet-invalid-query-parameter-value-for-grid-id
 //
 // Download Zend Framework From
 // http://framework.zend.com/downloads/latest
+//
+// Requires:
+// php-xml or equiv for DOMDocument
 //
 // Other Helpful Refs
 // http://framework.zend.com/downloads/latest
